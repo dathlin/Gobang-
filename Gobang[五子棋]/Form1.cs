@@ -169,11 +169,25 @@ namespace Gobang_五子棋_
 
         private bool IsPositionHasPawn(int x,int y)
         {
-            return main_chess[x, y].GobangPlayer != GobangPlayer.NonePlayer;
+            if (x >= 0 && x < 21 && y >= 0 && y < 21)
+            {
+                return main_chess[x, y].GobangPlayer != GobangPlayer.NonePlayer;
+            }
+            else
+            {
+                return false;
+            }
         }
         private bool IsPositionHasPawn(int x, int y, GobangPlayer player)
         {
-            return main_chess[x, y].GobangPlayer == player;
+            if (x >= 0 && x < 21 && y >= 0 && y < 21)
+            {
+                return main_chess[x, y].GobangPlayer == player;
+            }
+            else
+            {
+                return false;
+            }
         }
         private bool IsPositionHasPawn(Point point, GobangPlayer player)
         {

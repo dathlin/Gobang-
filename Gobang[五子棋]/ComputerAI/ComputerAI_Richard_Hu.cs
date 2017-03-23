@@ -20,6 +20,7 @@ namespace Gobang_五子棋_
         {
             return Task.Run<Point>(() =>
             {
+                Task.Delay(100);
                 //电脑玩家所有的权重集合
                 ChessWeight[,] m_Weights_Computer = new ChessWeight[21, 21];
                 //玩家一的所有的权重集合
