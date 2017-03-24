@@ -138,9 +138,7 @@ namespace Gobang_五子棋_
             
             if (checkBox2.Checked)
             {
-                main_chess[10, 10].StepNumber = PawnIndex++;
-                main_chess[10, 10].GobangPlayer = GobangPlayer.Player1;
-                LastPressPosition = new Point(10, 10);
+                SetPointPawn(new Point(10, 10), GobangPlayer.Player1);
             }
             else
             {
@@ -220,10 +218,15 @@ namespace Gobang_五子棋_
                         g.FillEllipse(main_chess[i, j].GetPawnBrush, m_rect);
                         g.DrawEllipse(Pens.DimGray, m_rect);
 
-                        m_rect.Offset(1, 1);
+                        //m_rect.Offset(1, 1);
+                        m_rect.Offset(-10, 0);
+                        m_rect.Width += 20;
                         if(checkBox1.Checked)
                         {
-                            g.DrawString(main_chess[i, j].StepNumber.ToString(), Font, Brushes.White, m_rect, StringFormatCenter);
+                            using (Font fontSmall = new Font("Microsoft YaHei UI", 8))
+                            {
+                                g.DrawString(main_chess[i, j].StepNumber.ToString(),fontSmall, Brushes.White, m_rect, StringFormatCenter);
+                            }
                         }
                     }
                 }
