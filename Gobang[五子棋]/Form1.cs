@@ -205,15 +205,22 @@ namespace Gobang_五子棋_
             {
                 for (int j = 0; j < 21; j++)
                 {
+                    int m_x = i * 25 + 10;
+                    int m_y = (20 - j) * 25 + 10;
+
                     if (main_chess[i, j].GobangPlayer == GobangPlayer.NonePlayer)
                     {
-                        continue;
+                        if(checkBox3.Checked)
+                        {
+                            Rectangle m_rect = new Rectangle(m_x - 20, m_y - 10, 40, 20);
+                            using (Font fontSmall = new Font("Microsoft YaHei UI", 8))
+                            {
+                                g.DrawString(main_chess[i, j].WeightScore.ToString(), fontSmall, Brushes.Gray, m_rect, StringFormatCenter);
+                            }
+                        }
                     }
                     else
                     {
-                        int m_x = i * 25 + 10;
-                        int m_y = (20 - j) * 25 + 10;
-
                         Rectangle m_rect = new Rectangle(m_x - 10, m_y - 10, 20, 20);
                         g.FillEllipse(main_chess[i, j].GetPawnBrush, m_rect);
                         g.DrawEllipse(Pens.DimGray, m_rect);
@@ -329,6 +336,11 @@ namespace Gobang_五子棋_
             main_chess[point.X, point.Y].StepNumber = PawnIndex++;
             LastPressPosition = point;
             CurrentPlayer = player;
+
+            if (player == GobangPlayer.Player1)
+            {
+                Richard_Hu.CalculateAllPoints();
+            }
         }
 
         private async void pictureBox1_Click(object sender, EventArgs e)
@@ -391,7 +403,10 @@ namespace Gobang_五子棋_
         {
             pictureBox1.Refresh();
         }
-
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Refresh();
+        }
 
 
         #region Computer AI
@@ -402,5 +417,7 @@ namespace Gobang_五子棋_
 
 
         #endregion
+
+        
     }
 }

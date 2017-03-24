@@ -39,8 +39,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,10 +117,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox3);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Location = new System.Drawing.Point(567, 96);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(237, 76);
+            this.groupBox2.Size = new System.Drawing.Size(237, 110);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings [游戏设置]";
@@ -137,7 +139,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(567, 473);
+            this.button1.Location = new System.Drawing.Point(567, 486);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(237, 52);
             this.button1.TabIndex = 3;
@@ -150,7 +152,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(567, 446);
+            this.checkBox2.Location = new System.Drawing.Point(567, 459);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(173, 21);
             this.checkBox2.TabIndex = 4;
@@ -161,23 +163,12 @@
             // 
             this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox3.Location = new System.Drawing.Point(567, 178);
+            this.groupBox3.Location = new System.Drawing.Point(567, 212);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(237, 145);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Game Level [游戏级别]";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("等线 Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(564, 326);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(240, 95);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Playing";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radioButton1
             // 
@@ -190,6 +181,28 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "simple by author [简单]";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("等线 Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(564, 357);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(240, 95);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Playing";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(19, 49);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(154, 21);
+            this.checkBox3.TabIndex = 1;
+            this.checkBox3.Text = "Show score [显示得分]";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // Form1
             // 
@@ -238,6 +251,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

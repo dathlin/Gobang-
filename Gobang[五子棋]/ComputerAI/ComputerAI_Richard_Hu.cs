@@ -15,6 +15,16 @@ namespace Gobang_五子棋_
         }
 
 
+        public void CalculateAllPoints()
+        {
+            for (int i = 0; i < 21; i++)
+            {
+                for (int j = 0; j < 21; j++)
+                {
+                    main_chess[i, j].WeightScore = GetWeight(i, j, GobangPlayer.Player2).WeightMax;
+                }
+            }
+        }
 
         public Task<Point> CalculateComputerAI()
         {
@@ -48,37 +58,37 @@ namespace Gobang_五子棋_
                 //to get the computer highest score point
                 //获取电脑综合评定分最高的点
                 List<Point> MaxPointComputer = new List<Point>();
-                int MaxComputer = 0;
                 int MaxPlayer1 = 0;
+                int MaxPlayer2 = 0;
                 List<Point> MaxPointPlayer1 = new List<Point>();
                 for (int i = 0; i <= 20; i++)
                 {
                     for (int j = 0; j <= 20; j++)
                     {
-                        if (m_Weights_Computer[i, j].TotleScore > MaxComputer)
+                        if (m_Weights_Computer[i, j].TotleScore > MaxPlayer1)
                         {
-                            MaxComputer = m_Weights_Computer[i, j].TotleScore;
+                            MaxPlayer1 = m_Weights_Computer[i, j].TotleScore;
                             MaxPointComputer.Clear();
                             MaxPointComputer.Add(new Point(i, j));
                         }
-                        else if (m_Weights_Computer[i, j].TotleScore == MaxComputer)
+                        else if (m_Weights_Computer[i, j].TotleScore == MaxPlayer1)
                         {
                             MaxPointComputer.Add(new Point(i, j));
                         }
-                        if (m_Weights_Player1[i, j].TotleScore > MaxPlayer1)
+                        if (m_Weights_Player1[i, j].TotleScore > MaxPlayer2)
                         {
-                            MaxPlayer1 = m_Weights_Player1[i, j].TotleScore;
+                            MaxPlayer2 = m_Weights_Player1[i, j].TotleScore;
                             MaxPointPlayer1.Clear();
                             MaxPointPlayer1.Add(new Point(i, j));
                         }
-                        else if (m_Weights_Player1[i, j].TotleScore == MaxPlayer1)
+                        else if (m_Weights_Player1[i, j].TotleScore == MaxPlayer2)
                         {
                             MaxPointPlayer1.Add(new Point(i, j));
                         }
                     }
                 }
-                if (MaxComputer > 49 && MaxPlayer1 < 200
-                    || (MaxComputer >= 200 && MaxPlayer1 >= 200))
+                if (MaxPlayer1 > 49 && MaxPlayer2 < 200
+                    || (MaxPlayer1 >= 200 && MaxPlayer2 >= 200))
                 {
                     int MaxTemp = 0;
                     Point MaxPoint = new Point();
@@ -95,7 +105,7 @@ namespace Gobang_五子棋_
                     return MaxPoint;
                 }
 
-                if (MaxComputer >= MaxPlayer1)
+                if (MaxPlayer1 >= MaxPlayer2)
                 {
                     int MaxTemp = 0;
                     Point MaxPoint = new Point();
