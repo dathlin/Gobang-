@@ -21,7 +21,7 @@ namespace Gobang_五子棋_
             {
                 for (int j = 0; j < 21; j++)
                 {
-                    main_chess[i, j].WeightScore = GetWeight(i, j, GobangPlayer.Player2).WeightMax;
+                    main_chess[i, j].WeightScore = GetWeight(i, j, GobangPlayer.Player2).TotleScore;
                 }
             }
         }
