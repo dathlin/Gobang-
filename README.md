@@ -6,4 +6,4 @@ a simple computer game, you can play with computer , we designed a simple comput
 based on visual studio 2017, .Net framework4.5 C\#7.0 
 
 
-![示例](https://github.com/dathlin/Gobang-/tree/master/Gobang%5B五子棋%5D//Screenshots/sample.png)
+![示例](https://github.com/dathlin/Gobang-/raw/master/Gobang%5B五子棋%5D//Screenshots/sample.png)
